@@ -1,0 +1,77 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4df369b2a4deb76894aafc67753871b6458ec3613a900731eb3f4c043833bdbd
+
+name:           practical-haskell
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/practical-haskell#readme>
+homepage:       https://github.com/githubuser/practical-haskell#readme
+bug-reports:    https://github.com/githubuser/practical-haskell/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/practical-haskell
+
+library
+  exposed-modules:
+      Chapter3
+      Chapter4
+      Chapter5
+      Chapter6
+      Lib
+  other-modules:
+      Paths_practical_haskell
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , microlens-platform
+  default-language: Haskell2010
+
+executable practical-haskell-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_practical_haskell
+  hs-source-dirs:
+      app
+  ghc-options: -fwrite-ide-info -hiedir=.hie -Wall -Wcompat -Widentities -Wincomplete-uni-patterns -Wredundant-constraints -Wmissing-export-lists -Wpartial-fields -Wmissing-deriving-strategies -threaded -rtsopts -with-rtsopts=-N -fhide-source-paths -freverse-errors
+  build-depends:
+      base >=4.7 && <5
+    , practical-haskell
+  default-language: Haskell2010
+
+test-suite practical-haskell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Lib.Chapter3Spec
+      Lib.Chapter4Spec
+      Lib.Chapther5Spec
+      Lib.Chapther6Spec
+      Lib.LibSpec
+      Paths_practical_haskell
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , microlens-platform
+    , practical-haskell
+  default-language: Haskell2010

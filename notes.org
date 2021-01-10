@@ -1,0 +1,21 @@
+#+TITLE: Practical-haskell study notes
+#+AUTHOR: Kayvan Kazeminejad
+#+email: kayvan@q2io.com
+
+* [[https://www.apress.com/gp/book/9781484244791][Practical-haskell book]]
+Study notes
+** Chapter 1
+** Chapter 2
+** Chapter 3
+Modules and code resuse
+** Chapter 4
+Using container classes
+** Chapter 5
+Lazyiness and infinite structures
+*** profiling stack profiling:
+**** [[https://docs.haskellstack.org/en/stable/GUIDE/#debugging][Profiling with stack]]
+#+begin_src shell
+stack clean && stack build --profile practical-haskell
+stack exec --profile -- practical-haskell-exe +RTS -p 
+
+#+end_src
