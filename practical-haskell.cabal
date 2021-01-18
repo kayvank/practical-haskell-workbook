@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4df369b2a4deb76894aafc67753871b6458ec3613a900731eb3f4c043833bdbd
+-- hash: 7e671ac904c6d3d04e5d30cd9ae1e72e2bd5ba061223223397021abeed0a99b3
 
 name:           practical-haskell
 version:        0.1.0.0
@@ -31,15 +31,33 @@ library
       Chapter4
       Chapter5
       Chapter6
+      Chapter7
+      Chapter7DT
+      Chapter8
+      Chapter9
       Lib
   other-modules:
       Paths_practical_haskell
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      amqp
+    , base >=4.7 && <5
+    , binary
+    , binary-conduit
+    , bytestring
+    , conduit
     , containers
+    , deepseq
+    , errors
+    , haskeline
+    , logict
     , microlens-platform
+    , monad-par
+    , mtl
+    , network
+    , stm
+    , transformers
   default-language: Haskell2010
 
 executable practical-haskell-exe
@@ -60,6 +78,7 @@ test-suite practical-haskell-test
   other-modules:
       Lib.Chapter3Spec
       Lib.Chapter4Spec
+      Lib.Chapter7Spec
       Lib.Chapther5Spec
       Lib.Chapther6Spec
       Lib.LibSpec
@@ -70,8 +89,16 @@ test-suite practical-haskell-test
   build-depends:
       QuickCheck
     , base >=4.7 && <5
+    , conduit
     , containers
+    , deepseq
+    , errors
+    , haskeline
     , hspec
+    , logict
     , microlens-platform
+    , monad-par
+    , mtl
     , practical-haskell
+    , stm
   default-language: Haskell2010

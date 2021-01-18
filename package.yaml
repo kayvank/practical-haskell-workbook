@@ -26,7 +26,22 @@ library:
   source-dirs: src
   dependencies:
     - containers
+    - mtl
+    - transformers
     - microlens-platform
+    - logict
+    - monad-par
+    - haskeline
+    - errors
+    - stm
+    - conduit
+    - amqp
+    - deepseq
+    - binary
+    - bytestring
+    - conduit
+    - binary-conduit
+    - network
 
 executables:
   practical-haskell-exe:
@@ -62,6 +77,14 @@ tests:
     dependencies:
       - practical-haskell
       - containers
+      - mtl
+      - stm
+      - logict
+      - haskeline
+      - conduit
       - microlens-platform
+      - monad-par
+      - deepseq
+      - errors
       - hspec
       - QuickCheck

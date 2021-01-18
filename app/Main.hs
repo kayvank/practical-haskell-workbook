@@ -1,8 +1,8 @@
+{-# LANGUAGE ScopedTypeVariables #-}
+
 module Main where
 
+import Chapter9
 
 main :: IO ()
-main =  putStrLn $ show result
-
-result :: Integer
-result = foldr (*) 1 [1 .. 100000]
+main = c9main
